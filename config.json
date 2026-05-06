@@ -1,42 +1,12 @@
 {
-    "port": "COM20",
-    "root_dir": "C:/Users/LazyT/Documents/MESA_LEDS_SANTOS_2026/Animations",
     "animations": {
-        "Agua": {
-            "ms_per_frame": 100,
-            "loops": 1,
-            "hold_ms": 3000
-        },
-        "Batata": {
-            "ms_per_frame": 100,
-            "loops": 1,
-            "hold_ms": 3000
-        },
-        "Bifana": {
-            "ms_per_frame": 100,
-            "loops": 1,
-            "hold_ms": 3000
-        },
-        "Cachorro": {
-            "ms_per_frame": 100,
-            "loops": 1,
-            "hold_ms": 3000
-        },
-        "Menu Bifana": {
-            "ms_per_frame": 100,
-            "loops": 1,
-            "hold_ms": 3000
-        },
-        "Menu Cachorro": {
-            "ms_per_frame": 100,
-            "loops": 1,
-            "hold_ms": 3000
-        },
-        "NEEC": {
-            "ms_per_frame": 900,
-            "loops": 4,
-            "hold_ms": 0
-        }
+        "Agua": { "ms_per_frame": 100, "loops": 1, "hold_ms": 3000 },
+        "Batata": { "ms_per_frame": 100, "loops": 1, "hold_ms": 3000 },
+        "Bifana": { "ms_per_frame": 100, "loops": 1, "hold_ms": 3000 },
+        "Cachorro": { "ms_per_frame": 100, "loops": 1, "hold_ms": 3000 },
+        "Menu Bifana": { "ms_per_frame": 100, "loops": 1, "hold_ms": 3000 },
+        "Menu Cachorro": { "ms_per_frame": 100, "loops": 1, "hold_ms": 3000 },
+        "NEEC": { "ms_per_frame": 900, "loops": 4, "hold_ms": 0 }
     },
     "order": [
         "NEEC",
