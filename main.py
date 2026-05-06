@@ -101,7 +101,7 @@ def run_player():
             cfg = json.load(f)
 
     # --- LÓGICA INTELIGENTE DE PORTA ---
-    port = find_arduino_port() or cfg.get("port", "COM19")
+    port = find_arduino_port() or cfg.get("port", "/dev/ttyACM0")
     print(f"[INFO] Porta Serial detectada: {port}")
 
     # --- LÓGICA INTELIGENTE DE PASTA ---
