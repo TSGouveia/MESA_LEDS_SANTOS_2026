@@ -73,9 +73,20 @@ def load_animation_frames(folder_path):
             img = cv2.resize(img, (MATRIX_WIDTH, MATRIX_HEIGHT))
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img = apply_image_processing(img)
+
+            # --- ROTAÇÃO DE 180 GRAUS ---
+            # Inverte as linhas (eixo 0) e as colunas (eixo 1)
+            img = cv2.flip(img, -1)
+
             pixel_data = []
             for y in range(MATRIX_HEIGHT):
-                row = img[y, :] if y % 2 == 0 else img[y, ::-1]
+                # Mantemos a lógica de zigue-zague (serpente) para a fiação da matriz
+                # Se a tua matriz for ligada em linha reta, remove o 'if y % 2 == 0'
+                if y % 2 == 0:
+                    row = img[y, :]
+                else:
+                    row = img[y, ::-1]
+
                 for pixel in row:
                     pixel_data.extend([pixel[0], pixel[1], pixel[2]])
             processed_frames.append(bytearray(pixel_data))
@@ -90,7 +101,7 @@ def run_player():
             cfg = json.load(f)
 
     # --- LÓGICA INTELIGENTE DE PORTA ---
-    port = find_arduino_port() or cfg.get("port", "/dev/ttyACM0")
+    port = find_arduino_port() or cfg.get("port", "COM19")
     print(f"[INFO] Porta Serial detectada: {port}")
 
     # --- LÓGICA INTELIGENTE DE PASTA ---
